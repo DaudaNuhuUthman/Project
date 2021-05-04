@@ -1,0 +1,9 @@
+AIzaSyBSZDL0obdIjp1sn1pMgIr-dbOU9ylpl6o
+lat: 6.725870,
+            lng: -1.612660
+
+   float: right;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);

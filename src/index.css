@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("./pic/Welcome\ To\ Ifound\ App.png") no-repeat;
+  background-size: cover;
+}
+.App {
+  height: 100vh;
+}
+
+form{
+  background: white;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  align-items: right;
+;
+ 
+  
+}
+.form h1{
+  border: 2px solid #ffffff;
+  float: left;
+  font-size: 40px;
+  border-bottom: 6px solid #ffffff;
+  margin-bottom: 50px;
+  padding: 13px 0;
+}
+
+input{
+  border: 2px solid white;
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  outline: none;
+  background: none;
+}
+
+button{
+ 
+  background: none;
+  border: 2px solid#ffffff;
+  padding: 5px;
+  font-size: 18px;
+  margin: 10px;
+  transition: 0.8s;
+}
+
+.btn-primary{
+  color: black;
+}
+
+.btn-3, .btn-5 {
+  color:black;
+  float: right;
+}
+
+.btn-3 :hover{
+  color:#073577;
+  
+}
+.btn-5 :hover{
+  color:#073577;
+  
+}
+.btn-primary:hover{
+  color: #073577;
+}
+
+.btn-1{
+  float:right;
+  color: white;
+}
+.btn-2{
+  float:right;
+  color: white;
+}
+.btn-3, .btn-5 {
+background-color: rgb(192, 189, 189);
+}
+
+.btn-4:hover {
+ background-color:ghostwhite
+}
+
+.btn-6:hover {
+  background-color:ghostwhite
+ }
