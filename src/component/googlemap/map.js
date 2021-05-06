@@ -3,8 +3,9 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import currentLocation from "./currentLocation"
 
 const mapStyles = {
-  width: '100%',
-  height: '100%'
+  width: '110%',
+  height: '110%',
+  position: "absolute"
 };
 
 export class MapContainer extends Component {
@@ -39,6 +40,7 @@ export class MapContainer extends Component {
   //   console.log(position.coords.latitude, 
   //     position.coords.longitude); 
   // }
+    
   
 
     return (
@@ -65,7 +67,7 @@ export class MapContainer extends Component {
         </div>
         </InfoWindow>
       </Map>
-
+      
       
     );
   }

@@ -2,6 +2,7 @@ import {useState} from "react";
 import {useHistory} from "react-router-dom";
 import InputField from "../component/inputfield"
 import Button from "../component/button"
+import Select from "../component/select"
 
 function SignUp(){
     
@@ -14,7 +15,7 @@ function SignUp(){
     }
     const gotosignin =(e) =>{
         e.preventDefault();
-        history.push("/")
+        history.push("/signin")
     }
      function getCurrentPosition(){
        navigator.geolocation.getCurrentPosition((position)=>{
@@ -43,22 +44,30 @@ function SignUp(){
 
     function submit(e){
         e.preventDefault();
-        getCurrentPosition()
+        getCurrentPosition();
+        history.push("./signin")
+
+
     }
     
     return(
         <form>
             <h1>Sign Up</h1>
-            <InputField type="text" label="Firstname" name="firstname" placeholder="eg. Dun" onChange={onChange}/>
-            <InputField type="text" label="Lastname" name="lastname" placeholder ="eg. Kwabena" onChange={onChange}/>
+            <InputField type="text" label="Fullname" name="fullname" placeholder="eg. Kwabena Mark" onChange={onChange}/>
+            <InputField type="text" label="Place Name" name="pname" placeholder ="eg. Mark Plumbing Works" onChange={onChange}/>
             <InputField type="email" label="Email" name="email" placeholder="eg.daubena@gmail.com" onChange={onChange}/>
             <InputField type="password" label="Password" name="password" onChange={onChange}/>
             <InputField type="password" label="Confirm Password" name="cpassword" onChange={onChange}/>
-
+        
             <div>
                 <Button text="Submit" classname="btn-3" onClick ={submit}/>
-                <Button text="Sign In" classname="btn-4" onClick={gotosignin}/>
+                <div>
+                <p>Already have an account? <a href=""className="style" onClick={gotosignin}><i>Sign In</i></a></p>
+                {/* <Button text="Sign In" classname="btn-4" /> */}
+                </div>
+               
             </div>
+            
             
         </form>
     )

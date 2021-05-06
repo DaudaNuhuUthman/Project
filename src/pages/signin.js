@@ -18,11 +18,12 @@ function SignIn() {
   const gotosignup = (e) => {
     e.preventDefault();
     history.push("/signup")
+    
   }
 
   function submit(e){
-    e.preventDefault();
 
+    e.preventDefault();
     let json_object=JSON.stringify(values)
     fetch("http://localhost:5000/api/v1/signin", {
       method:"POST",
@@ -33,7 +34,7 @@ function SignIn() {
     .then (
       (res)=>{
         if (res.success) {
-
+         history.push("./uploadpage")
           
         } else if (res.failed) {
           alert("wrong user or password")
@@ -45,6 +46,7 @@ function SignIn() {
           },
       (err) => console.log(err)
     )
+   
 
   }
   return (
