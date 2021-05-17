@@ -5,17 +5,18 @@ import Button from "../component/button"
 import Select from "../component/select"
 
 function SignUp(){
+
     
     const history = useHistory()
     const [values, setValues] = useState({})
 
-
     const onChange =(e)=>{
+        console.log(e.target.name)
         setValues({...values, [e.target.name]: e.target.value})
     }
     const gotosignin =(e) =>{
         e.preventDefault();
-        history.push("/signin")
+        
     }
      function getCurrentPosition(){
        navigator.geolocation.getCurrentPosition((position)=>{
@@ -35,12 +36,14 @@ function SignUp(){
             })
             .then(response=> response.json())
             .then(responseData=>{
+               
                 console.log(responseData);
             }, err=> console.log(err))
        })
 
 
     }
+    // console.log(values)
 
     function submit(e){
         e.preventDefault();
@@ -58,6 +61,7 @@ function SignUp(){
             <InputField type="email" label="Email" name="email" placeholder="eg.daubena@gmail.com" onChange={onChange}/>
             <InputField type="password" label="Password" name="password" onChange={onChange}/>
             <InputField type="password" label="Confirm Password" name="cpassword" onChange={onChange}/>
+            <Select name="category" onChange={onChange}/>
         
             <div>
                 <Button text="Submit" classname="btn-3" onClick ={submit}/>

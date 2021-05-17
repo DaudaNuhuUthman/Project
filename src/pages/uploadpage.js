@@ -19,7 +19,8 @@ function UploadPage(){
     }
    
     return(<div className= "serve">
-        <Inputfield className="feel" type="text" label="Description" name="description" placeholder="Add a brief description about your place" onChange={onChange}/>
+        <Inputfield className="feel" type="text" label="Description" name="Description" placeholder="Add a brief description about your place" onChange={onChange}/>
+        <Inputfield className="feeling" type="text" name="Description" placeholder="Add your contact details" onChange={onChange}/>
         <input type="file"/>
         
         <Button text="Log Out" classname="btn-0" onClick={()=>goToPage("/")}/>

@@ -1,35 +1,37 @@
-import {useState} from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../component/button";
-import {useAppContext} from "../appcontext";
+import { useAppContext } from "../appcontext";
 import SignIn from "./signin";
 import SignUp from "./signup.js";
 import Map from "../component/googlemap/map"
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
-const LandingPage =()=>{
-    const {state, dispatch} = useAppContext()
-    const [btn,setbtn] =useState(false)
+const LandingPage = () => {
 
-    const changestate =(type) =>{
-        dispatch({type:type})
+    const { state, dispatch } = useAppContext()
+    const [btn, setbtn] = useState(false)
+
+    const changestate = (type) => {
+        dispatch({ type: type })
     }
 
-    const history =useHistory()
-    const goToPage=(path) =>{
-        
+    const history = useHistory()
+    const goToPage = (path) => {
+
         history.push(path)
     }
 
 
-    return(
+
+    return (
         <div className="landing">
-         <div>
-          <navbar className= "niv">
-                  <h1 className="one" img src="logo.jpg" alt=" image">Welcome to Ifound</h1>
-                    <h4 className="two">Find</h4>  
+            <div>
+                <navbar className="niv">
+                    <h1 className="one" img src="logo.jpg" alt=" image">Welcome to Ifound</h1>
+                    <h4 className="two">Find</h4>
                     <select className="two">
-                    <option value=""></option>
-                        <option value="Clothes"> clothes</option>
+                        <option value=""></option>
+                        <option value="Clothes"> Clothes</option>
                         <option value="Food"> Food</option>
                         <option value="Repair Shops"> Repairs</option>
                         <option value="Groceries"> Groceries</option>
@@ -43,11 +45,11 @@ const LandingPage =()=>{
                         <option value="other"> Other</option>
 
                     </select>
-                
-                  <p className= "this" onClick={()=>goToPage("/signup")}> <i> Do you want to be found?</i> </p>
-          </navbar>
-        </div>
-           {<Map/>}  
+
+                    <p className="this" onClick={() => goToPage("/signup")}> <i> Do you want to be found?</i> </p>
+                </navbar>
+            </div>
+            <Map />
             {/* <Button text="Sign In" classname={"btn-1"} onClick={()=> changestate("showsignin")}/>
             <Button text="Sign up" classname={"btn-2"} onClick={()=> changestate("showsignup")}/>
             {state.showsignin && <SignIn/>}

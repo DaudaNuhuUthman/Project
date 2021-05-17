@@ -2,8 +2,8 @@
 
 function Select(props){
     return( 
-        <select className="two">
-                    <option value=""></option>
+        <select className="category" name={props.name} onChange={props.onChange}>
+                    <option value="">Select Category</option>
                         <option value="Clothes"> clothes</option>
                         <option value="Food"> food</option>
                         <option value="Repairs"> Repair Shops</option>
